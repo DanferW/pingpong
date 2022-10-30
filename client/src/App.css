@@ -55,8 +55,121 @@ div .linkButton:hover {
 }
 
 div .player-form {
+  height: 700px;
+  
+}
+
+div .users-list {
+  margin-top: 50px;
+  height: 600px;
+  width: 60%;
   display: flex;
-  justify-content: center;
-  height: 200px;
-  background-color: antiquewhite;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+div .games-list {
+  margin-top: 50px;
+  height: 600px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+hr {
+  width: 95%;
+  margin-left: -5%;
+}
+
+.backButton {
+  margin: 10px 10px -50px 10px;
+  background-color: #4e3897;
+  border: none;
+  border-radius: 7px;
+  padding: 10px;
+  color: #E5D4ED;
+}
+.backButton:hover {
+  background-color: #5941A9;
+  cursor: pointer;
+}
+
+.backLink {
+  align-self: flex-start;
+  
+}
+
+.player-input {
+  border-radius: 10px;
+  border: none;
+  width: 296px;
+  height: 40px;
+  background-color: #eee3f3;
+  color: #1D1128;
+}
+
+.ngContent {
+  margin-bottom: 100px;
+}
+
+#sv-players {
+  border: none;
+  border-radius: 5px;
+  background-color: #4e3897;
+  color: #E5D4ED;
+  margin-top: 10px;
+}
+
+#sv-players:hover {
+  background-color: #5941A9;
+  cursor: pointer;
+}
+
+div #game-box {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+div .game-players {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-bottom: -150px;
+}
+.player-name { 
+  font-size: 40px;
+  justify-self: center;
+  grid-area: 1 / 1 / 2 / 3; 
+}
+
+.add-win { 
+  border: none;
+  border-radius: 7px;
+  background-color: #4e3897;
+  color: #E5D4ED;
+  height: 50px;
+  align-self: center;
+  grid-area: 1 / 3 / 2 / 4; 
+}
+
+.add-win:hover {
+  background-color: #5941A9;
+  cursor: pointer;
+}
+
+.player-wins { 
+  font-size: 20px;
+  justify-self: center;
+  grid-area: 2 / 1 / 3 / 3; 
+}
+
+#current-winner {
+  margin-top: -100px;
 }

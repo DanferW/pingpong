@@ -14,12 +14,12 @@ function MainPage(){
                 </div>
                 <div>
                     <Link to={"/users"}>
-                    <button  className="linkButton"> View players </button>
+                        <button  className="linkButton"> View players </button>
                     </Link>
                 </div>
                 <div>
                     <Link to={"/games"}>
-                    <button  className="linkButton"> View games </button>
+                        <button  className="linkButton"> View games </button>
                     </Link>
                 </div>
             </div>

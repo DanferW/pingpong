@@ -7,3 +7,7 @@ export const getUsers = async () => {
 export const saveUser = async (user) => {
   await axios.post("http://localhost:4000/suser", user);
 };
+
+export const updateUser = async (data) => {
+  await axios.post("http://localhost:4000/upuser", data);
+};

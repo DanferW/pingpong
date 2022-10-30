@@ -2,11 +2,7 @@ import connection from "../dbConnection.js";
 
 export const getGames = (req, res) => {
   connection.query("SELECT * FROM game", (err, result) => {
-    if (!result.lenght) {
-      res.status(500).json({ message: "No games found" });
-    } else {
-      res.send(result);
-    }
+    res.send(result);
   });
 };
 

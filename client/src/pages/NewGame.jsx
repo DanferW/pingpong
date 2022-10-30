@@ -7,7 +7,7 @@ function NewGame(){
     return (
         <div className="container">
         <div className="box">
-        <Link to={"/game"} >
+        <Link to={"/"} className="backLink">
             <button className="backButton"> Back </button>
         </Link>
             <h1>New Game</h1>
@@ -18,11 +18,9 @@ function NewGame(){
                         player2: ""
                     }}
                     onSubmit={async (values, actions) => {
-                        console.log(values);
                         try {
                             const response = await saveUser(values);
                             console.log(response);
-                            actions.resetForm();
                         } catch (error) {
                             console.error(error);
                         }
@@ -30,29 +28,35 @@ function NewGame(){
                     >
                         {({ handleChange, handleSubmit, values }) => (
                             <Form onSubmit={handleSubmit}>
-                                <h2>Player 1</h2>
-                                <input 
-                                    type="text" 
-                                    name="player1" 
-                                    placeholder="Write a name"
-                                    onChange={handleChange}
-                                    value={values.player1}
-                                />
-
-                                <h2>Player 2</h2>
-                                <input 
-                                    type="text" 
-                                    name="player2" 
-                                    placeholder="Write a name"
-                                    onChange={handleChange}
-                                    value={values.player2}
-                                />
-                                <br></br>
-                                <button type="submit"> Save players </button>
-                                <br></br>
-                                <Link to={"/game"} >
-                                <button type="submit" className="linkButton"> Continue </button>
-                                </Link>
+                                <div className="ngContent">
+                                    <h2>Player 1</h2>
+                                    <input 
+                                        className="player-input"
+                                        type="text" 
+                                        name="player1" 
+                                        placeholder="Write a name"
+                                        onChange={handleChange}
+                                        value={values.player1}
+                                    />
+                                </div>
+                                <div className="ngContent">
+                                    <h2>Player 2</h2>
+                                    <input
+                                        className="player-input"
+                                        type="text" 
+                                        name="player2" 
+                                        placeholder="Write a name"
+                                        onChange={handleChange}
+                                        value={values.player2}
+                                    />
+                                    <br />
+                                    <button type="submit" id="sv-players"> Save players </button>
+                                </div>
+                                <div className="ngContent">
+                                    <Link to="/game" state={values}>
+                                        <button className="linkButton"> Continue </button>
+                                    </Link>
+                                </div>
                             </Form>
                         )}
                 </Formik>
