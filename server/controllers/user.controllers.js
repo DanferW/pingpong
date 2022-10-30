@@ -1,21 +1,46 @@
 import connection from "../dbConnection.js";
 
 export const getUsers = (req, res) => {
-  connection.query("SELECT * FROM user", (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
-  });
+  try {
+    connection.query("SELECT * FROM user", (err, result) => {
+      if (err) throw err;
+      res.send(result);
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 export const saveUser = (req, res) => {
-  const { name, wins, games } = req.body;
-  connection.query(
-    "INSERT INTO user(name, wins, games) VALUES(?,?,?)",
-    [name, wins, games],
-    (err) => {
+  try {
+    const { player1, player2 } = req.body;
+    const sql = "INSERT INTO user(name, wins, games) VALUES(?,?,?)";
+    connection.query(sql, [player1, 0, 0], (err) => {
       if (err) throw err;
-      res.send("Saved user");
-    }
-  );
+    });
+    connection.query(sql, [player2, 0, 0], (err) => {
+      if (err) throw err;
+    });
+    res.send("Saved user");
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const updateUser = (req, res) => {
+  try {
+    const {
+      player1, p1wins, player2, p2wins,
+    } = req.body;
+    const sql = "UPDATE user SET wins = wins + ?, games = games + 1 WHERE name= ? ";
+    connection.query(sql, [p1wins, player1], (err) => {
+      if (err) throw err;
+    });
+    connection.query(sql, [p2wins, player2], (err) => {
+      if (err) throw err;
+    });
+    res.send("datos actualizados");
+  } catch (error) {
+    console.error(error);
+  }
 };

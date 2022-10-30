@@ -12,7 +12,6 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     semi: ["error", "always"],
     quotes: ["error", "double"],
     "linebreak-style": 0,
