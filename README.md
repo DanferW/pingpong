@@ -14,7 +14,7 @@
 
 - 2.- Create database with the following code in mysql:
   ```
-  CREATE DATABASE  IF NOT EXISTS `ping_pong` 
+  CREATE DATABASE  IF NOT EXISTS `ping_pong`;
   USE `ping_pong`;
   
   DROP TABLE IF EXISTS `game`;
