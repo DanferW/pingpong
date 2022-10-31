@@ -64,7 +64,7 @@
 
 - 4.- execute the application with:
   ```
-  npm run server
+  npm start
   ```
   
   ## Front-end
