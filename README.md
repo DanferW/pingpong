@@ -55,7 +55,7 @@
   database: "ping_pong",
   user: "root",
   password: "root",
-});
+  });
   ```
 
 - 4.- execute the application with:
