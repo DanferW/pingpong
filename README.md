@@ -1,5 +1,9 @@
 # pingpong
 
+#Pre-requisites
+
+  Install NodeJs from https://nodejs.org/en/
+
 # Instalation
 
 1.- Clone repository:
