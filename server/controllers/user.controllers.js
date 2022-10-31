@@ -21,7 +21,7 @@ export const saveUser = (req, res) => {
     connection.query(sql, [player2, 0, 0], (err) => {
       if (err) throw err;
     });
-    res.send("Saved user");
+    res.sendStatus(200);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -39,7 +39,7 @@ export const updateUser = (req, res) => {
     connection.query(sql, [p2wins, player2], (err) => {
       if (err) throw err;
     });
-    res.send("datos actualizados");
+    res.sendStatus(200);
   } catch (error) {
     console.error(error);
   }
